@@ -2,14 +2,12 @@
 
 ![alt text](slideres/wppucelameetup.png "WP Pucela meetup")
 
-##Enlaces:
+# Crear un plugin para Wordpress desde 0
 
-[Documentación de Wordpress sobre plugins](https://developer.wordpress.org/plugins/)
+### Javier Alonso Núñez
 
-[Ejemplos y documentación de hooks](http://blog.teamtreehouse.com/hooks-wordpress-actions-filters-examples)
+### Full Stack developer at Brooktec
 
-[Indice con Hooks de Wordpress](http://hookr.io/)
-
-
+### @javalonson
 
 
