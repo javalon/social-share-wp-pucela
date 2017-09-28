@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2{
+	color: #E51A4C;
+    text-align: center;
+}
+
+h3, h4{
+	text-align: center;
+}
+
+code{
+	border: 1px solid rgba(0, 0, 0, 0.54);
+	background-color: rgba(229, 26, 76, 0.27);
+	padding: 0px 5px;
+}
+
+
+@media (min-width: 768px) {
+    body{
+    	zoom: 2.5;
+    }
+    p{
+    	font-size: 0.5em;
+    }
+    ul{
+    	font-size: 0.5em;
+    	padding-left: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    body{
+    	zoom: 2;
+    }}
+
+@media (max-width: 767px) and (orientation: portrait) {
+    body{
+    	zoom: 1;
+    }
+}
