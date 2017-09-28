@@ -12,3 +12,17 @@ Text Domain:  wporg
 Domain Path:  /languages
 */
 
+//Ponemos un texto en el footer.
+function hacer_accion(){
+	echo "<h1 style='position:absolute;'>Hello WP Puclea!!!!</h1>";
+}
+
+add_action('wp_footer','hacer_accion');
+
+//Añadimos al titlulo de cada entrada un texto
+function hacer_filtro($title, $id=null){
+	return "WP Pucela:". $title;
+}
+
+add_filter('the_title', 'hacer_filtro', 10, 2);
+

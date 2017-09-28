@@ -1,8 +1,7 @@
 
-##Plugin minimo
+##Plugin minimo: Acción y filtro básico
 
 ```php
-
 <?php
 /*
 Plugin Name:  WordPress.org Plugin
@@ -17,5 +16,17 @@ Text Domain:  wporg
 Domain Path:  /languages
 */
 
-```
+//Ponemos un texto en el footer.
+function hacer_accion(){
+	echo "<h1>Hello WP Puclea!!!!</h1>";
+}
 
+add_action('wp_footer','hacer_accion');
+
+//Añadimos al titlulo de cada entrada un texto
+function hacer_filtro($title, $id=null){
+	return "WP Pucela:". $title;
+}
+
+add_filter('the_title', 'hacer_filtro', 10, 2);
+```
