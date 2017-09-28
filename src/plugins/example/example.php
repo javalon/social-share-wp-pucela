@@ -12,17 +12,28 @@ Text Domain:  wporg
 Domain Path:  /languages
 */
 
-//Ponemos un texto en el footer.
-function hacer_accion(){
-	echo "<h1 style='position:absolute;'>Hello WP Puclea!!!!</h1>";
+function pluginprefix_setup_post_types()
+{
+    // registramos un nuevo tipo de post llamado "book"
+    register_post_type( 'book', ['public' => 'true'] );
 }
-
-add_action('wp_footer','hacer_accion');
-
-//Añadimos al titlulo de cada entrada un texto
-function hacer_filtro($title, $id=null){
-	return "WP Pucela:". $title;
+add_action( 'init', 'pluginprefix_setup_post_type' );
+ 
+function pluginprefix_install()
+{
+    // Llamamos a nuestra función que registra el CPT "book"
+    pluginprefix_setup_post_type();
+ 
+    // limpiamos los enlaces permanentes despues de haber registrado el CPT
+    flush_rewrite_rules();
 }
+register_activation_hook( __FILE__, 'pluginprefix_install' );
 
-add_filter('the_title', 'hacer_filtro', 10, 2);
-
+function pluginprefix_deactivation()
+{
+    // Nuesto CPT "book" se elimina automaticamente
+ 
+    // limpiamos los enlaces permantentes para no dejar rastro del CTP "book"
+    flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'pluginprefix_deactivation' );
